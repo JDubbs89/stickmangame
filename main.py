@@ -7,13 +7,15 @@ font = pygame.font.Font('freesansbold.ttf', 40)
 # Creating and setting screen width and height, display caption
 WIDTH, HEIGHT = 1600, 900
 screen = pygame.display.set_mode((WIDTH, HEIGHT),pygame.RESIZABLE)
-pygame.display.set_caption("Caterpillar")
+pygame.display.set_caption("Stickman")
 
 # Setting the clock object and fps
 clock = pygame.time.Clock() 
 FPS = 60
 
 
+player1 = character.Stickman(0)
+player2 = character.Stickman(1)
 
 
 
