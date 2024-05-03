@@ -14,12 +14,27 @@ clock = pygame.time.Clock()
 FPS = 60
 
 
-player1 = character.Stickman(0)
-player2 = character.Stickman(1)
+player1 = character.Stickman(0,50,200)
+player2 = character.Stickman(1,100,200)
+# Spawn positions for players 1 and 2
 
+<<<<<<< Updated upstream
 allsprites = pygame.sprite.Group()
 platforms = pygame.sprite.Group()
 allsprites.add(player1,player2)
+=======
+# Create the enemies for the players to fight
+nonplayer = enemy.Enemy(0,200,200)
+nonplayer = enemy.Enemy(1,300,100)
+nonplayer = enemy.Enemy(2,500,100)
+nonplayer = enemy.Enemy(3,700,200)
+nonplayer = enemy.Enemy(4,900,100)
+nonplayer = enemy.Enemy(5,300,200)
+nonplayer = enemy.Enemy(6,900,200)
+nonplayer = enemy.Enemy(7,700,100)
+nonplayer = enemy.Enemy(8,500,200)
+
+>>>>>>> Stashed changes
 
 def main():
     running = True
