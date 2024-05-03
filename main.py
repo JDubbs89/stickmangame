@@ -17,7 +17,9 @@ FPS = 60
 player1 = character.Stickman(0)
 player2 = character.Stickman(1)
 
-
+allsprites = pygame.sprite.Group()
+platforms = pygame.sprite.Group()
+allsprites.add(player1,player2)
 
 def main():
     running = True
