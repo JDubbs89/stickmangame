@@ -11,7 +11,7 @@ def __init__(inscreen,inwidth,inheight):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self,id,x,y,):
         super(Enemy, self).__init__()
-        self.surf = pygame.image.load("enemy1standstill.gif").convert()
+        self.surf = pygame.image.load("assets/enemy1standstill.gif").convert()
         self.surf.set_colorkey((255, 255, 255), RLEACCEL)
         self.id = id
         self.posx = x

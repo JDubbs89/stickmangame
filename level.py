@@ -29,7 +29,7 @@ class Platform(pygame.sprite.Sprite):
         self.width =  sizex
         self.height = sizey
         self.id = id
-        self.surf = pygame.image.load("30x10greyplatform.gif").convert()
+        self.surf = pygame.image.load("assets/30x10greyplatform.gif").convert()
         self.surf.set_colorkey((255,255,255),RLEACCEL)
         self.rect = self.surf.get_rect(center=(
                 random.randint(WIDTH + 20, WIDTH + 100),
