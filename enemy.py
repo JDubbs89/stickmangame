@@ -19,25 +19,13 @@ class Enemy(pygame.sprite.Sprite):
         self.rect = self.surf.get_rect(
             center=(
                 random.randint(WIDTH + 20, WIDTH + 100),
-                random.randint(0, HEIGHT),
+                random.randint(10, HEIGHT),
             )
         )
         self.speed = random.randint(5, 20)
-   # def Update():
+    def Update(self):
+        self.rect.move_ip(-self.speed, 0)
+        if self.rect.right < 0:
+            self.kill()
         
 
-'''
-    def __init__(self):
-        super(Enemy, self).__init__()
-        self.surf = pygame.image.load("").convert()
-        # The starting position is based on the platforms position
-        self.rect = self.surf.get_rect(
-            center=(PlatformX, PlatformY + 1)
-        )
-        self.speed = #MOVESPEED
-
-
-    def update(self):
-        #MOVEMENT
-        #Death Parameter
-            self.kill()'''
