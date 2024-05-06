@@ -224,7 +224,7 @@
         "kind": 6,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "class Player():\n\tdef __init__(self, x, y):\n\t\tself.reset(x, y)\n\tdef update(self, game_over):\n\t\tdx = 0\n\t\tdy = 0\n\t\twalk_cooldown = 5\n\t\tif game_over == 0:\n\t\t\t#get keypresses\n\t\t\tkey = pygame.key.get_pressed()",
+        "peekOfCode": "class Player():\n\tdef __init__(self, x, y,index):\n\t\tself.pindex = index\n\t\tself.reset(x, y)\n\tdef update(self, game_over):\n\t\tdx = 0\n\t\tdy = 0\n\t\twalk_cooldown = 5\n\t\tif game_over == 0:\n\t\t\t#get keypresses",
         "detail": "menu",
         "documentation": {}
     },
@@ -260,7 +260,7 @@
         "kind": 6,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "class Exit(pygame.sprite.Sprite):\n\tdef __init__(self, x, y):\n\t\tpygame.sprite.Sprite.__init__(self)\n\t\timg = pygame.image.load('img/exit.png')\n\t\tself.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130)\nblob_group = pygame.sprite.Group()",
+        "peekOfCode": "class Exit(pygame.sprite.Sprite):\n\tdef __init__(self, x, y):\n\t\tpygame.sprite.Sprite.__init__(self)\n\t\timg = pygame.image.load('img/exit.png')\n\t\tself.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130,1)\nplayer2 = Player(100, screen_height - 130,1)",
         "detail": "menu",
         "documentation": {}
     },
@@ -314,7 +314,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "screen = pygame.display.set_mode((screen_width, screen_height))\npygame.display.set_caption('Stickman')\n#define game variables\ntile_size = 50\ngame_over = 0\nmain_menu = True\nlevel = 0\nmax_levels = 7\n#load images\nsun_img = pygame.image.load('img/sun.png')",
+        "peekOfCode": "screen = pygame.display.set_mode((screen_width, screen_height))\npygame.display.set_caption('Stickman')\n#define game variables\ntile_size = 50\ngame_over = 0\nmain_menu = True\nlevel = 0\nmax_levels = 7\n#load images\n#sun_img = pygame.image.load('img/sun.png')",
         "detail": "menu",
         "documentation": {}
     },
@@ -323,7 +323,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "tile_size = 50\ngame_over = 0\nmain_menu = True\nlevel = 0\nmax_levels = 7\n#load images\nsun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('img/restart_btn.png')\nstart_img = pygame.image.load('img/start_btn.png')",
+        "peekOfCode": "tile_size = 50\ngame_over = 0\nmain_menu = True\nlevel = 0\nmax_levels = 7\n#load images\n#sun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('assets/30x10blueplatform.gif')\nstart_img = pygame.image.load('assets/30x10blueplatform.gif')",
         "detail": "menu",
         "documentation": {}
     },
@@ -332,7 +332,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "game_over = 0\nmain_menu = True\nlevel = 0\nmax_levels = 7\n#load images\nsun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('img/restart_btn.png')\nstart_img = pygame.image.load('img/start_btn.png')\nexit_img = pygame.image.load('img/exit_btn.png')",
+        "peekOfCode": "game_over = 0\nmain_menu = True\nlevel = 0\nmax_levels = 7\n#load images\n#sun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('assets/30x10blueplatform.gif')\nstart_img = pygame.image.load('assets/30x10blueplatform.gif')\nexit_img = pygame.image.load('assets/30x10blueplatform.gif')",
         "detail": "menu",
         "documentation": {}
     },
@@ -341,7 +341,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "main_menu = True\nlevel = 0\nmax_levels = 7\n#load images\nsun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('img/restart_btn.png')\nstart_img = pygame.image.load('img/start_btn.png')\nexit_img = pygame.image.load('img/exit_btn.png')\n#function to reset level",
+        "peekOfCode": "main_menu = True\nlevel = 0\nmax_levels = 7\n#load images\n#sun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('assets/30x10blueplatform.gif')\nstart_img = pygame.image.load('assets/30x10blueplatform.gif')\nexit_img = pygame.image.load('assets/30x10blueplatform.gif')\n#function to reset level",
         "detail": "menu",
         "documentation": {}
     },
@@ -350,7 +350,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "level = 0\nmax_levels = 7\n#load images\nsun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('img/restart_btn.png')\nstart_img = pygame.image.load('img/start_btn.png')\nexit_img = pygame.image.load('img/exit_btn.png')\n#function to reset level\ndef reset_level(level):",
+        "peekOfCode": "level = 0\nmax_levels = 7\n#load images\n#sun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('assets/30x10blueplatform.gif')\nstart_img = pygame.image.load('assets/30x10blueplatform.gif')\nexit_img = pygame.image.load('assets/30x10blueplatform.gif')\n#function to reset level\ndef reset_level(level):",
         "detail": "menu",
         "documentation": {}
     },
@@ -359,16 +359,16 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "max_levels = 7\n#load images\nsun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('img/restart_btn.png')\nstart_img = pygame.image.load('img/start_btn.png')\nexit_img = pygame.image.load('img/exit_btn.png')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)",
+        "peekOfCode": "max_levels = 7\n#load images\n#sun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('assets/30x10blueplatform.gif')\nstart_img = pygame.image.load('assets/30x10blueplatform.gif')\nexit_img = pygame.image.load('assets/30x10blueplatform.gif')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)",
         "detail": "menu",
         "documentation": {}
     },
     {
-        "label": "sun_img",
+        "label": "#sun_img",
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "sun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('img/restart_btn.png')\nstart_img = pygame.image.load('img/start_btn.png')\nexit_img = pygame.image.load('img/exit_btn.png')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()",
+        "peekOfCode": "#sun_img = pygame.image.load('img/sun.png')\nbg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('assets/30x10blueplatform.gif')\nstart_img = pygame.image.load('assets/30x10blueplatform.gif')\nexit_img = pygame.image.load('assets/30x10blueplatform.gif')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()",
         "detail": "menu",
         "documentation": {}
     },
@@ -377,7 +377,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "bg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('img/restart_btn.png')\nstart_img = pygame.image.load('img/start_btn.png')\nexit_img = pygame.image.load('img/exit_btn.png')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()\n\texit_group.empty()",
+        "peekOfCode": "bg_img = pygame.image.load('assets/background1.gif')\nrestart_img = pygame.image.load('assets/30x10blueplatform.gif')\nstart_img = pygame.image.load('assets/30x10blueplatform.gif')\nexit_img = pygame.image.load('assets/30x10blueplatform.gif')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()\n\texit_group.empty()",
         "detail": "menu",
         "documentation": {}
     },
@@ -386,7 +386,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "restart_img = pygame.image.load('img/restart_btn.png')\nstart_img = pygame.image.load('img/start_btn.png')\nexit_img = pygame.image.load('img/exit_btn.png')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()\n\texit_group.empty()\n\t#load in level data and create world",
+        "peekOfCode": "restart_img = pygame.image.load('assets/30x10blueplatform.gif')\nstart_img = pygame.image.load('assets/30x10blueplatform.gif')\nexit_img = pygame.image.load('assets/30x10blueplatform.gif')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()\n\texit_group.empty()\n\t#load in level data and create world",
         "detail": "menu",
         "documentation": {}
     },
@@ -395,7 +395,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "start_img = pygame.image.load('img/start_btn.png')\nexit_img = pygame.image.load('img/exit_btn.png')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()\n\texit_group.empty()\n\t#load in level data and create world\n\tif path.exists(f'level{level}_data'):",
+        "peekOfCode": "start_img = pygame.image.load('assets/30x10blueplatform.gif')\nexit_img = pygame.image.load('assets/30x10blueplatform.gif')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()\n\texit_group.empty()\n\t#load in level data and create world\n\tif path.exists(f'level{level}_data'):",
         "detail": "menu",
         "documentation": {}
     },
@@ -404,7 +404,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "exit_img = pygame.image.load('img/exit_btn.png')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()\n\texit_group.empty()\n\t#load in level data and create world\n\tif path.exists(f'level{level}_data'):\n\t\tpickle_in = open(f'level{level}_data', 'rb')",
+        "peekOfCode": "exit_img = pygame.image.load('assets/30x10blueplatform.gif')\n#function to reset level\ndef reset_level(level):\n\tplayer.reset(100, screen_height - 130)\n\tblob_group.empty()\n\tlava_group.empty()\n\texit_group.empty()\n\t#load in level data and create world\n\tif path.exists(f'level{level}_data'):\n\t\tpickle_in = open(f'level{level}_data', 'rb')",
         "detail": "menu",
         "documentation": {}
     },
@@ -503,7 +503,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\t\t\taction = True\n\t\t\t\tself.clicked = True\n\t\tif pygame.mouse.get_pressed()[0] == 0:\n\t\t\tself.clicked = False\n\t\t#draw button\n\t\tscreen.blit(self.image, self.rect)\n\t\treturn action\nclass Player():\n\tdef __init__(self, x, y):\n\t\tself.reset(x, y)",
+        "peekOfCode": "\t\t\t\taction = True\n\t\t\t\tself.clicked = True\n\t\tif pygame.mouse.get_pressed()[0] == 0:\n\t\t\tself.clicked = False\n\t\t#draw button\n\t\tscreen.blit(self.image, self.rect)\n\t\treturn action\nclass Player():\n\tdef __init__(self, x, y,index):\n\t\tself.pindex = index",
         "detail": "menu",
         "documentation": {}
     },
@@ -512,7 +512,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\t\t\tself.clicked = True\n\t\tif pygame.mouse.get_pressed()[0] == 0:\n\t\t\tself.clicked = False\n\t\t#draw button\n\t\tscreen.blit(self.image, self.rect)\n\t\treturn action\nclass Player():\n\tdef __init__(self, x, y):\n\t\tself.reset(x, y)\n\tdef update(self, game_over):",
+        "peekOfCode": "\t\t\t\tself.clicked = True\n\t\tif pygame.mouse.get_pressed()[0] == 0:\n\t\t\tself.clicked = False\n\t\t#draw button\n\t\tscreen.blit(self.image, self.rect)\n\t\treturn action\nclass Player():\n\tdef __init__(self, x, y,index):\n\t\tself.pindex = index\n\t\tself.reset(x, y)",
         "detail": "menu",
         "documentation": {}
     },
@@ -521,7 +521,16 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\t\tself.clicked = False\n\t\t#draw button\n\t\tscreen.blit(self.image, self.rect)\n\t\treturn action\nclass Player():\n\tdef __init__(self, x, y):\n\t\tself.reset(x, y)\n\tdef update(self, game_over):\n\t\tdx = 0\n\t\tdy = 0",
+        "peekOfCode": "\t\t\tself.clicked = False\n\t\t#draw button\n\t\tscreen.blit(self.image, self.rect)\n\t\treturn action\nclass Player():\n\tdef __init__(self, x, y,index):\n\t\tself.pindex = index\n\t\tself.reset(x, y)\n\tdef update(self, game_over):\n\t\tdx = 0",
+        "detail": "menu",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tself.pindex",
+        "kind": 5,
+        "importPath": "menu",
+        "description": "menu",
+        "peekOfCode": "\t\tself.pindex = index\n\t\tself.reset(x, y)\n\tdef update(self, game_over):\n\t\tdx = 0\n\t\tdy = 0\n\t\twalk_cooldown = 5\n\t\tif game_over == 0:\n\t\t\t#get keypresses\n\t\t\tkey = pygame.key.get_pressed()\n\t\t\tif key[pygame.K_SPACE] and self.jumped == False and self.in_air == False:",
         "detail": "menu",
         "documentation": {}
     },
@@ -800,7 +809,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tself.images_left = []\n\t\tself.index = 0\n\t\tself.counter = 0\n\t\tfor num in range(1, 5):\n\t\t\timg_right = pygame.image.load(f'img/guy{num}.png')\n\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load('img/ghost.png')",
+        "peekOfCode": "\t\tself.images_left = []\n\t\tself.index = 0\n\t\tself.counter = 0\n\t\tfor num in range(1, 5):\n\t\t\timg_right = pygame.image.load(f'img/guy{num}.png')\n\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load(f'assets/p{self.pindex}standstill.png')",
         "detail": "menu",
         "documentation": {}
     },
@@ -809,7 +818,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tself.index = 0\n\t\tself.counter = 0\n\t\tfor num in range(1, 5):\n\t\t\timg_right = pygame.image.load(f'img/guy{num}.png')\n\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load('img/ghost.png')\n\t\tself.image = self.images_right[self.index]",
+        "peekOfCode": "\t\tself.index = 0\n\t\tself.counter = 0\n\t\tfor num in range(1, 5):\n\t\t\timg_right = pygame.image.load(f'img/guy{num}.png')\n\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load(f'assets/p{self.pindex}standstill.png')\n\t\tself.image = self.images_right[self.index]",
         "detail": "menu",
         "documentation": {}
     },
@@ -818,7 +827,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tself.counter = 0\n\t\tfor num in range(1, 5):\n\t\t\timg_right = pygame.image.load(f'img/guy{num}.png')\n\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load('img/ghost.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()",
+        "peekOfCode": "\t\tself.counter = 0\n\t\tfor num in range(1, 5):\n\t\t\timg_right = pygame.image.load(f'img/guy{num}.png')\n\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load(f'assets/p{self.pindex}standstill.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()",
         "detail": "menu",
         "documentation": {}
     },
@@ -827,7 +836,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\t\timg_right = pygame.image.load(f'img/guy{num}.png')\n\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load('img/ghost.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y",
+        "peekOfCode": "\t\t\timg_right = pygame.image.load(f'img/guy{num}.png')\n\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load(f'assets/p{self.pindex}standstill.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y",
         "detail": "menu",
         "documentation": {}
     },
@@ -836,7 +845,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load('img/ghost.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\n\t\tself.width = self.image.get_width()",
+        "peekOfCode": "\t\t\timg_right = pygame.transform.scale(img_right, (40, 80))\n\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load(f'assets/p{self.pindex}standstill.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\n\t\tself.width = self.image.get_width()",
         "detail": "menu",
         "documentation": {}
     },
@@ -845,7 +854,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load('img/ghost.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\n\t\tself.width = self.image.get_width()\n\t\tself.height = self.image.get_height()",
+        "peekOfCode": "\t\t\timg_left = pygame.transform.flip(img_right, True, False)\n\t\t\tself.images_right.append(img_right)\n\t\t\tself.images_left.append(img_left)\n\t\tself.dead_image = pygame.image.load(f'assets/p{self.pindex}standstill.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\n\t\tself.width = self.image.get_width()\n\t\tself.height = self.image.get_height()",
         "detail": "menu",
         "documentation": {}
     },
@@ -854,7 +863,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tself.dead_image = pygame.image.load('img/ghost.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\n\t\tself.width = self.image.get_width()\n\t\tself.height = self.image.get_height()\n\t\tself.vel_y = 0\n\t\tself.jumped = False\n\t\tself.direction = 0",
+        "peekOfCode": "\t\tself.dead_image = pygame.image.load(f'assets/p{self.pindex}standstill.png')\n\t\tself.image = self.images_right[self.index]\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\n\t\tself.width = self.image.get_width()\n\t\tself.height = self.image.get_height()\n\t\tself.vel_y = 0\n\t\tself.jumped = False\n\t\tself.direction = 0",
         "detail": "menu",
         "documentation": {}
     },
@@ -1205,7 +1214,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tself.rect.y = y\nclass Exit(pygame.sprite.Sprite):\n\tdef __init__(self, x, y):\n\t\tpygame.sprite.Sprite.__init__(self)\n\t\timg = pygame.image.load('img/exit.png')\n\t\tself.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130)",
+        "peekOfCode": "\t\tself.rect.y = y\nclass Exit(pygame.sprite.Sprite):\n\tdef __init__(self, x, y):\n\t\tpygame.sprite.Sprite.__init__(self)\n\t\timg = pygame.image.load('img/exit.png')\n\t\tself.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130,1)",
         "detail": "menu",
         "documentation": {}
     },
@@ -1214,7 +1223,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\timg = pygame.image.load('img/exit.png')\n\t\tself.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world",
+        "peekOfCode": "\t\timg = pygame.image.load('img/exit.png')\n\t\tself.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130,1)\nplayer2 = Player(100, screen_height - 130,1)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()",
         "detail": "menu",
         "documentation": {}
     },
@@ -1223,7 +1232,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tself.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):",
+        "peekOfCode": "\t\tself.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))\n\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130,1)\nplayer2 = Player(100, screen_height - 130,1)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world",
         "detail": "menu",
         "documentation": {}
     },
@@ -1232,7 +1241,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):\n\tpickle_in = open(f'level{level}_data', 'rb')",
+        "peekOfCode": "\t\tself.rect = self.image.get_rect()\n\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130,1)\nplayer2 = Player(100, screen_height - 130,1)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):",
         "detail": "menu",
         "documentation": {}
     },
@@ -1241,7 +1250,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):\n\tpickle_in = open(f'level{level}_data', 'rb')\n\tworld_data = pickle.load(pickle_in)",
+        "peekOfCode": "\t\tself.rect.x = x\n\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130,1)\nplayer2 = Player(100, screen_height - 130,1)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):\n\tpickle_in = open(f'level{level}_data', 'rb')",
         "detail": "menu",
         "documentation": {}
     },
@@ -1250,7 +1259,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):\n\tpickle_in = open(f'level{level}_data', 'rb')\n\tworld_data = pickle.load(pickle_in)\nworld = World(world_data)",
+        "peekOfCode": "\t\tself.rect.y = y\nplayer = Player(100, screen_height - 130,1)\nplayer2 = Player(100, screen_height - 130,1)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):\n\tpickle_in = open(f'level{level}_data', 'rb')\n\tworld_data = pickle.load(pickle_in)",
         "detail": "menu",
         "documentation": {}
     },
@@ -1259,7 +1268,16 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "player = Player(100, screen_height - 130)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):\n\tpickle_in = open(f'level{level}_data', 'rb')\n\tworld_data = pickle.load(pickle_in)\nworld = World(world_data)\n#create buttons",
+        "peekOfCode": "player = Player(100, screen_height - 130,1)\nplayer2 = Player(100, screen_height - 130,1)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):\n\tpickle_in = open(f'level{level}_data', 'rb')\n\tworld_data = pickle.load(pickle_in)\nworld = World(world_data)",
+        "detail": "menu",
+        "documentation": {}
+    },
+    {
+        "label": "player2",
+        "kind": 5,
+        "importPath": "menu",
+        "description": "menu",
+        "peekOfCode": "player2 = Player(100, screen_height - 130,1)\nblob_group = pygame.sprite.Group()\nlava_group = pygame.sprite.Group()\nexit_group = pygame.sprite.Group()\n#load in level data and create world\nif path.exists(f'level{level}_data'):\n\tpickle_in = open(f'level{level}_data', 'rb')\n\tworld_data = pickle.load(pickle_in)\nworld = World(world_data)\n#create buttons",
         "detail": "menu",
         "documentation": {}
     },
@@ -1313,7 +1331,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "world = World(world_data)\n#create buttons\nrestart_button = Button(screen_width // 2 - 50, screen_height // 2 + 100, restart_img)\nstart_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)\nexit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)\nrun = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\tscreen.blit(sun_img, (100, 100))",
+        "peekOfCode": "world = World(world_data)\n#create buttons\nrestart_button = Button(screen_width // 2 - 50, screen_height // 2 + 100, restart_img)\nstart_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)\nexit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)\nrun = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\t#screen.blit(sun_img, (100, 100))",
         "detail": "menu",
         "documentation": {}
     },
@@ -1322,7 +1340,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "restart_button = Button(screen_width // 2 - 50, screen_height // 2 + 100, restart_img)\nstart_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)\nexit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)\nrun = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\tscreen.blit(sun_img, (100, 100))\n\tif main_menu == True:\n\t\tif exit_button.draw():",
+        "peekOfCode": "restart_button = Button(screen_width // 2 - 50, screen_height // 2 + 100, restart_img)\nstart_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)\nexit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)\nrun = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\t#screen.blit(sun_img, (100, 100))\n\tif main_menu == True:\n\t\tif exit_button.draw():",
         "detail": "menu",
         "documentation": {}
     },
@@ -1331,7 +1349,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)\nexit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)\nrun = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\tscreen.blit(sun_img, (100, 100))\n\tif main_menu == True:\n\t\tif exit_button.draw():\n\t\t\trun = False",
+        "peekOfCode": "start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)\nexit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)\nrun = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\t#screen.blit(sun_img, (100, 100))\n\tif main_menu == True:\n\t\tif exit_button.draw():\n\t\t\trun = False",
         "detail": "menu",
         "documentation": {}
     },
@@ -1340,7 +1358,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)\nrun = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\tscreen.blit(sun_img, (100, 100))\n\tif main_menu == True:\n\t\tif exit_button.draw():\n\t\t\trun = False\n\t\tif start_button.draw():",
+        "peekOfCode": "exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)\nrun = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\t#screen.blit(sun_img, (100, 100))\n\tif main_menu == True:\n\t\tif exit_button.draw():\n\t\t\trun = False\n\t\tif start_button.draw():",
         "detail": "menu",
         "documentation": {}
     },
@@ -1349,7 +1367,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "run = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\tscreen.blit(sun_img, (100, 100))\n\tif main_menu == True:\n\t\tif exit_button.draw():\n\t\t\trun = False\n\t\tif start_button.draw():\n\t\t\tmain_menu = False",
+        "peekOfCode": "run = True\nwhile run:\n\tclock.tick(fps)\n\tscreen.blit(bg_img, (0, 0))\n\t#screen.blit(sun_img, (100, 100))\n\tif main_menu == True:\n\t\tif exit_button.draw():\n\t\t\trun = False\n\t\tif start_button.draw():\n\t\t\tmain_menu = False",
         "detail": "menu",
         "documentation": {}
     },
@@ -1367,7 +1385,7 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\t\tmain_menu = False\n\telse:\n\t\tworld.draw()\n\t\tif game_over == 0:\n\t\t\tblob_group.update()\n\t\tblob_group.draw(screen)\n\t\tlava_group.draw(screen)\n\t\texit_group.draw(screen)\n\t\tgame_over = player.update(game_over)\n\t\t#if player has died",
+        "peekOfCode": "\t\t\tmain_menu = False\n\telse:\n\t\tworld.draw()\n\t\tif game_over == 0:\n\t\t\tblob_group.update()\n\t\tblob_group.draw(screen)\n\t\tlava_group.draw(screen)\n\t\texit_group.draw(screen)\n\t\tgame_over = player.update(game_over)\n\t\tif not game_over:",
         "detail": "menu",
         "documentation": {}
     },
@@ -1376,7 +1394,16 @@
         "kind": 5,
         "importPath": "menu",
         "description": "menu",
-        "peekOfCode": "\t\tgame_over = player.update(game_over)\n\t\t#if player has died\n\t\tif game_over == -1:\n\t\t\tif restart_button.draw():\n\t\t\t\tworld_data = []\n\t\t\t\tworld = reset_level(level)\n\t\t\t\tgame_over = 0\n\t\t#if player has completed the level\n\t\tif game_over == 1:\n\t\t\t#reset game and go to next level",
+        "peekOfCode": "\t\tgame_over = player.update(game_over)\n\t\tif not game_over:\n\t\t\tgame_over = player2.update(game_over)\n\t\t#if player has died\n\t\tif game_over == -1:\n\t\t\tif restart_button.draw():\n\t\t\t\tworld_data = []\n\t\t\t\tworld = reset_level(level)\n\t\t\t\tgame_over = 0\n\t\t#if player has completed the level",
+        "detail": "menu",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tgame_over",
+        "kind": 5,
+        "importPath": "menu",
+        "description": "menu",
+        "peekOfCode": "\t\t\tgame_over = player2.update(game_over)\n\t\t#if player has died\n\t\tif game_over == -1:\n\t\t\tif restart_button.draw():\n\t\t\t\tworld_data = []\n\t\t\t\tworld = reset_level(level)\n\t\t\t\tgame_over = 0\n\t\t#if player has completed the level\n\t\tif game_over == 1:\n\t\t\t#reset game and go to next level",
         "detail": "menu",
         "documentation": {}
     },

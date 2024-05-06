@@ -23,11 +23,11 @@ max_levels = 7
 
 
 #load images
-sun_img = pygame.image.load('img/sun.png')
+#sun_img = pygame.image.load('img/sun.png')
 bg_img = pygame.image.load('assets/background1.gif')
-restart_img = pygame.image.load('img/restart_btn.png')
-start_img = pygame.image.load('img/start_btn.png')
-exit_img = pygame.image.load('img/exit_btn.png')
+restart_img = pygame.image.load('assets/30x10blueplatform.gif')
+start_img = pygame.image.load('assets/30x10blueplatform.gif')
+exit_img = pygame.image.load('assets/30x10blueplatform.gif')
 
 
 #function to reset level
@@ -77,7 +77,8 @@ class Button():
 
 
 class Player():
-	def __init__(self, x, y):
+	def __init__(self, x, y,index):
+		self.pindex = index
 		self.reset(x, y)
 
 
@@ -190,7 +191,7 @@ class Player():
 			img_left = pygame.transform.flip(img_right, True, False)
 			self.images_right.append(img_right)
 			self.images_left.append(img_left)
-		self.dead_image = pygame.image.load('img/ghost.png')
+		self.dead_image = pygame.image.load(f'assets/p{self.pindex}standstill.png')
 		self.image = self.images_right[self.index]
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -289,8 +290,8 @@ class Exit(pygame.sprite.Sprite):
 
 
 
-player = Player(100, screen_height - 130)
-
+player = Player(100, screen_height - 130,1)
+player2 = Player(100, screen_height - 130,1)
 blob_group = pygame.sprite.Group()
 lava_group = pygame.sprite.Group()
 exit_group = pygame.sprite.Group()
@@ -315,7 +316,7 @@ while run:
 	clock.tick(fps)
 
 	screen.blit(bg_img, (0, 0))
-	screen.blit(sun_img, (100, 100))
+	#screen.blit(sun_img, (100, 100))
 
 	if main_menu == True:
 		if exit_button.draw():
@@ -333,6 +334,8 @@ while run:
 		exit_group.draw(screen)
 
 		game_over = player.update(game_over)
+		if not game_over:
+			game_over = player2.update(game_over)
 
 		#if player has died
 		if game_over == -1:
