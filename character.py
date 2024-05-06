@@ -4,10 +4,10 @@ vec = pygame.math.Vector2
 
 
 def __init__(inWIDTH, inHEIGHT, inscreen,game):
-    global WIDTH, HEIGHT, SCREEN,GAME
+    global WIDTH, HEIGHT, screen,GAME
     WIDTH = inWIDTH
     HEIGHT = inHEIGHT
-    SCREEN = inscreen
+    screen = inscreen
     GAME = game
 
 class Stickman(pygame.sprite.Sprite):
@@ -65,7 +65,7 @@ class Stickman(pygame.sprite.Sprite):
             dy = 0
 
 		#draw player onto screen
-        SCREEN.blit(self.image, self.rect)
+        screen.blit(self.image, self.rect)
 
     def kill(self):
         self.lives -= 1
