@@ -118,7 +118,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class Game():\n    def main(self):\n        global enemies, player1, player2, platformarr, allsprites, platforms\n        self.running = True\n        self.enemies = []\n        self.keys = pygame.key.get_pressed()\n        self.player1 = character.Stickman(0, 50, 200,self.keys)\n        self.player2 = character.Stickman(1, 100, 200,self.keys)\n        # Spawn positions for players 1 and 2\n        for x in range(0, 7):",
+        "peekOfCode": "class Game():\n    def main(self):\n        self.running = True\n        self.enemies = []\n        self.keys = pygame.key.get_pressed()\n        self.player1 = character.Stickman(0, 50, 200,self.keys)\n        self.player2 = character.Stickman(1, 100, 200,self.keys)\n        # Spawn positions for players 1 and 2\n        for x in range(0, 7):\n            self.enemies.append(enemy.Enemy(x, 100 * x, 200))",
         "detail": "main",
         "documentation": {}
     },

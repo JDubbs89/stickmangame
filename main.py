@@ -6,7 +6,6 @@ pygame.init()
 class Game():
 
     def main(self):
-        global enemies, player1, player2, platformarr, allsprites, platforms
         self.running = True
         self.enemies = []
         self.keys = pygame.key.get_pressed()
