@@ -25,7 +25,8 @@ class Game():
             self.keys = pygame.key.get_pressed()
             self.player1.keys = self.keys
             self.player2.keys = self.keys
-            self.allsprites.update()
+            self.player1.update(pygame.key.get_pressed())
+            self.player2.update(pygame.key.get_pressed())
             self.platforms.update()
             self.hits = pygame.sprite.spritecollide(self.player1, self.platformarr, False)
             if self.hits:

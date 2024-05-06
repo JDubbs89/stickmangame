@@ -24,31 +24,30 @@ class Stickman(pygame.sprite.Sprite):
         self.vel_y = 0
         self.jumped = False
 
-    def update(self):
+    def update(self,keys):
         dx = 0
         dy = 0
-        self.keys = GAME.keys
+        self.keys = keys
 		#get keypresses
-        if self.keys[pygame.K_UP] and self.jumped == False and self.id == 0:
+        if keys[pygame.K_UP] and self.jumped == False and self.id == 0:
             self.vel_y = -15
             self.jumped = True
-        if self.keys[pygame.K_UP] == False and self.id == 0:
-            self.jumped = False
-        if self.keys[pygame.K_LEFT] and self.id == 0:
+        if keys[pygame.K_UP] == False and self.id == 0:
+            jumped = False
+        if keys[pygame.K_LEFT]:
             dx -= 5
-        if self.keys[pygame.K_RIGHT] and self.id == 0:
+        if keys[pygame.K_RIGHT]:
             dx += 5
-        if self.keys[pygame.K_w] and self.jumped == False and self.id == 1:
+        if keys[pygame.K_w] and self.jumped == False and self.id == 1:
             self.vel_y = -15
             self.jumped = True
-        if self.keys[pygame.K_w] == False and self.id == 1:
+        if keys[pygame.K_w] == False and self.id == 1:
             self.jumped = False
-        if self.keys[pygame.K_a] and self.id == 1:
+        if keys[pygame.K_a] and self.id == 1:
             dx -= 5
-        if self.keys[pygame.K_d] and self.id == 1:
+        if keys[pygame.K_d] and self.id == 1:
             dx += 5
-            print("Hello World")
-
+        print("Hello World")
 		#add gravity
         self.vel_y += 1
         if self.vel_y > 10:
