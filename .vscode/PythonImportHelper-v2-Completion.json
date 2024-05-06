@@ -1,0 +1,302 @@
+[
+    {
+        "label": "pygame,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygame.",
+        "description": "pygame.",
+        "detail": "pygame.",
+        "documentation": {}
+    },
+    {
+        "label": "RLEACCEL",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_UP",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_DOWN",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_RIGHT",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_LEFT",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_ESCAPE",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_SPACE",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_w",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_a",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_s",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "K_d",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "QUIT",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "RLEACCEL",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "RLEACCEL",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "QUIT",
+        "importPath": "pygame.locals",
+        "description": "pygame.locals",
+        "isExtraImport": true,
+        "detail": "pygame.locals",
+        "documentation": {}
+    },
+    {
+        "label": "pygame",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygame",
+        "description": "pygame",
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "Stickman",
+        "kind": 6,
+        "importPath": "character",
+        "description": "character",
+        "peekOfCode": "class Stickman(pygame.sprite.Sprite):\n    def __init__(self, id, posx, posy, gravity=2, friction=0.12):\n        super(Stickman, self).__init__()\n        self.id = id\n        self.lives = 3\n        self.grav = gravity\n        self.fric = friction\n        self.surf = pygame.image.load(\"assets/p1standstill.gif\").convert()\n        self.surf.set_colorkey((255, 255, 255), RLEACCEL)\n        self.rect = self.surf.get_rect(",
+        "detail": "character",
+        "documentation": {}
+    },
+    {
+        "label": "vec",
+        "kind": 5,
+        "importPath": "character",
+        "description": "character",
+        "peekOfCode": "vec = pygame.math.Vector2\nfrom pygame.locals import (\n    RLEACCEL,\n    K_UP,\n    K_DOWN,\n    K_RIGHT,\n    K_LEFT,\n    K_ESCAPE,\n    K_SPACE,\n    K_w,",
+        "detail": "character",
+        "documentation": {}
+    },
+    {
+        "label": "Enemy",
+        "kind": 6,
+        "importPath": "enemy",
+        "description": "enemy",
+        "peekOfCode": "class Enemy(pygame.sprite.Sprite):\n    def __init__(\n        self,\n        id,\n        x,\n        y,\n    ):\n        super(Enemy, self).__init__()\n        self.surf = pygame.image.load(\"assets/enemy1standstill.gif\").convert()\n        self.surf.set_colorkey((255, 255, 255), RLEACCEL)",
+        "detail": "enemy",
+        "documentation": {}
+    },
+    {
+        "label": "Door",
+        "kind": 6,
+        "importPath": "level",
+        "description": "level",
+        "peekOfCode": "class Door(pygame.sprite.Sprite):\n    def __init__(self, x, y):\n        super(Door, self).__init__()\n        self.x = x\n        self.y = y\n        self.surf = pygame.image.load(\"30x10greyplatform.gif\").convert()\n        self.surf.set_colorkey((255, 255, 255), RLEACCEL)\n        self.rect = self.surf.get_rect(\n            center=(\n                random.randint(WIDTH + 20, WIDTH + 100),",
+        "detail": "level",
+        "documentation": {}
+    },
+    {
+        "label": "Platform",
+        "kind": 6,
+        "importPath": "level",
+        "description": "level",
+        "peekOfCode": "class Platform(pygame.sprite.Sprite):\n    def __init__(self, x, y, id, sizex=30, sizey=10):\n        super(Platform, self).__init__()\n        self.x = x\n        self.y = y\n        self.width = sizex\n        self.height = sizey\n        self.id = id\n        self.surf = pygame.image.load(\"assets/30x10greyplatform.gif\").convert()\n        self.surf.set_colorkey((255, 255, 255), RLEACCEL)",
+        "detail": "level",
+        "documentation": {}
+    },
+    {
+        "label": "TeamPlatform",
+        "kind": 6,
+        "importPath": "level",
+        "description": "level",
+        "peekOfCode": "class TeamPlatform(Platform):\n    def __init__(self, team):\n        super(TeamPlatform, self).__init__()\n        self.team = team\n    def land(self, player):\n        super(TeamPlatform, self).land()\n        if player.team != self.team:\n            player.kill()",
+        "detail": "level",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    global enemies, player1, player2, platformarr, allsprites, platforms\n    running = True\n    enemies = []\n    player1 = character.Stickman(0, 50, 200)\n    player2 = character.Stickman(1, 100, 200)\n    # Spawn positions for players 1 and 2\n    for x in range(0, 7):\n        enemies.append(enemy.Enemy(x, 100 * x, 200))\n    platformarr = [level.Platform(100, 205, 0)]",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "font",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "font = pygame.font.Font(\"freesansbold.ttf\", 40)\n# Creating and setting screen width and height, display caption\nWIDTH, HEIGHT = 1600, 900\nscreen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)\npygame.display.set_caption(\"Stickman\")\ncharacter.__init__(WIDTH, HEIGHT, screen)\nenemy.__init__(screen, WIDTH, HEIGHT)\nlevel.__init__(WIDTH, HEIGHT, screen)\n# Setting the clock object and fps\nclock = pygame.time.Clock()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "screen",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)\npygame.display.set_caption(\"Stickman\")\ncharacter.__init__(WIDTH, HEIGHT, screen)\nenemy.__init__(screen, WIDTH, HEIGHT)\nlevel.__init__(WIDTH, HEIGHT, screen)\n# Setting the clock object and fps\nclock = pygame.time.Clock()\nFPS = 60\nenemies = []\nplayer1 = character.Stickman(0, 50, 200)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "clock",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "clock = pygame.time.Clock()\nFPS = 60\nenemies = []\nplayer1 = character.Stickman(0, 50, 200)\nplayer2 = character.Stickman(1, 100, 200)\n# Spawn positions for players 1 and 2\nfor x in range(0, 7):\n    enemies.append(enemy.Enemy(x, 100 * x, 200))\nplatformarr = [level.Platform(100, 205, 0)]\nallsprites = pygame.sprite.Group()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "FPS = 60\nenemies = []\nplayer1 = character.Stickman(0, 50, 200)\nplayer2 = character.Stickman(1, 100, 200)\n# Spawn positions for players 1 and 2\nfor x in range(0, 7):\n    enemies.append(enemy.Enemy(x, 100 * x, 200))\nplatformarr = [level.Platform(100, 205, 0)]\nallsprites = pygame.sprite.Group()\nplatforms = pygame.sprite.Group()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "enemies",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "enemies = []\nplayer1 = character.Stickman(0, 50, 200)\nplayer2 = character.Stickman(1, 100, 200)\n# Spawn positions for players 1 and 2\nfor x in range(0, 7):\n    enemies.append(enemy.Enemy(x, 100 * x, 200))\nplatformarr = [level.Platform(100, 205, 0)]\nallsprites = pygame.sprite.Group()\nplatforms = pygame.sprite.Group()\nallsprites.add(player1, player2)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "player1",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "player1 = character.Stickman(0, 50, 200)\nplayer2 = character.Stickman(1, 100, 200)\n# Spawn positions for players 1 and 2\nfor x in range(0, 7):\n    enemies.append(enemy.Enemy(x, 100 * x, 200))\nplatformarr = [level.Platform(100, 205, 0)]\nallsprites = pygame.sprite.Group()\nplatforms = pygame.sprite.Group()\nallsprites.add(player1, player2)\nallsprites.add(enemies)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "player2",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "player2 = character.Stickman(1, 100, 200)\n# Spawn positions for players 1 and 2\nfor x in range(0, 7):\n    enemies.append(enemy.Enemy(x, 100 * x, 200))\nplatformarr = [level.Platform(100, 205, 0)]\nallsprites = pygame.sprite.Group()\nplatforms = pygame.sprite.Group()\nallsprites.add(player1, player2)\nallsprites.add(enemies)\ndef main():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "platformarr",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "platformarr = [level.Platform(100, 205, 0)]\nallsprites = pygame.sprite.Group()\nplatforms = pygame.sprite.Group()\nallsprites.add(player1, player2)\nallsprites.add(enemies)\ndef main():\n    global enemies, player1, player2, platformarr, allsprites, platforms\n    running = True\n    enemies = []\n    player1 = character.Stickman(0, 50, 200)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "allsprites",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "allsprites = pygame.sprite.Group()\nplatforms = pygame.sprite.Group()\nallsprites.add(player1, player2)\nallsprites.add(enemies)\ndef main():\n    global enemies, player1, player2, platformarr, allsprites, platforms\n    running = True\n    enemies = []\n    player1 = character.Stickman(0, 50, 200)\n    player2 = character.Stickman(1, 100, 200)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "platforms",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "platforms = pygame.sprite.Group()\nallsprites.add(player1, player2)\nallsprites.add(enemies)\ndef main():\n    global enemies, player1, player2, platformarr, allsprites, platforms\n    running = True\n    enemies = []\n    player1 = character.Stickman(0, 50, 200)\n    player2 = character.Stickman(1, 100, 200)\n    # Spawn positions for players 1 and 2",
+        "detail": "main",
+        "documentation": {}
+    }
+]

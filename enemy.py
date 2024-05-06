@@ -1,15 +1,22 @@
 import pygame
 import random
-from pygame.locals import (
-    RLEACCEL)
-def __init__(inscreen,inwidth,inheight):
-    global SCREEN,WIDTH,HEIGHT
+from pygame.locals import RLEACCEL
+
+
+def __init__(inscreen, inwidth, inheight):
+    global SCREEN, WIDTH, HEIGHT
     SCREEN = inscreen
     WIDTH = inwidth
     HEIGHT = inheight
 
+
 class Enemy(pygame.sprite.Sprite):
-    def __init__(self,id,x,y,):
+    def __init__(
+        self,
+        id,
+        x,
+        y,
+    ):
         super(Enemy, self).__init__()
         self.surf = pygame.image.load("assets/enemy1standstill.gif").convert()
         self.surf.set_colorkey((255, 255, 255), RLEACCEL)
@@ -23,9 +30,8 @@ class Enemy(pygame.sprite.Sprite):
             )
         )
         self.speed = random.randint(5, 20)
+
     def Update(self):
         self.rect.move_ip(-self.speed, 0)
         if self.rect.right <= 0:
             self.rect.right = 0
-        
-
