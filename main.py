@@ -27,7 +27,7 @@ class Game():
             self.player2.keys = self.keys
             self.allsprites.update()
             self.platforms.update()
-            self.hits = pygame.sprite.spritecollide(player1, platformarr, False)
+            self.hits = pygame.sprite.spritecollide(self.player1, self.platformarr, False)
             if self.hits:
                 self.player1.pos.y = self.hits[0].rect.top
             # Update the display
