@@ -1,82 +1,74 @@
 import pygame, random, os
 
 vec = pygame.math.Vector2
-from pygame.locals import (
-    RLEACCEL,
-    K_UP,
-    K_DOWN,
-    K_RIGHT,
-    K_LEFT,
-    K_ESCAPE,
-    K_SPACE,
-    K_w,
-    K_a,
-    K_s,
-    K_d,
-    QUIT,
-)
 
 
-def __init__(inWIDTH, inHEIGHT, inscreen):
-    global WIDTH, HEIGHT, SCREEN
+def __init__(inWIDTH, inHEIGHT, inscreen,game):
+    global WIDTH, HEIGHT, SCREEN,GAME
     WIDTH = inWIDTH
     HEIGHT = inHEIGHT
     SCREEN = inscreen
-
+    GAME = game
 
 class Stickman(pygame.sprite.Sprite):
-    def __init__(self, id, posx, posy, gravity=2, friction=0.12):
+    def __init__(self, id, x, y,keys, gravity=2, friction=0.12):
         super(Stickman, self).__init__()
         self.id = id
         self.lives = 3
-        self.grav = gravity
-        self.fric = friction
-        self.surf = pygame.image.load("assets/p1standstill.gif").convert()
-        self.surf.set_colorkey((255, 255, 255), RLEACCEL)
-        self.rect = self.surf.get_rect(
-            midbottom=(
-                posx,
-                posy,
-            )
-        )
-        self.pos = vec(posx, posy)
-        self.vel = vec(0, 0)
-        self.acc = vec(0, 0)
+        self.keys = keys
+        img = pygame.image.load("assets/p1standstill.gif")
+        self.image = pygame.transform.scale(img, (40, 80))
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        self.vel_y = 0
+        self.jumped = False
 
     def update(self):
-        events = pygame.event.get()
-        for event in events:
-            if event.type == pygame.KEYDOWN:
+        dx = 0
+        dy = 0
+        self.keys = GAME.keys
+		#get keypresses
+        if self.keys[pygame.K_UP] and self.jumped == False and self.id == 0:
+            self.vel_y = -15
+            self.jumped = True
+        if self.keys[pygame.K_UP] == False and self.id == 0:
+            self.jumped = False
+        if self.keys[pygame.K_LEFT] and self.id == 0:
+            dx -= 5
+        if self.keys[pygame.K_RIGHT] and self.id == 0:
+            dx += 5
+        if self.keys[pygame.K_w] and self.jumped == False and self.id == 1:
+            self.vel_y = -15
+            self.jumped = True
+        if self.keys[pygame.K_w] == False and self.id == 1:
+            self.jumped = False
+        if self.keys[pygame.K_a] and self.id == 1:
+            dx -= 5
+        if self.keys[pygame.K_d] and self.id == 1:
+            dx += 5
+            print("Hello World")
 
-                if self.id == 0 and self.lives > 0:
-                    self.vel = vec(0, 0.5)
-                    if event.key == K_a:
-                        self.acc.x = -0.5
-                    if event.key == K_d:
-                        self.acc.x = 0.5
-                elif self.lives > 0:
-                    if event.key == K_LEFT:
-                        self.acc.x = -0.5
-                    if event.key == K_RIGHT:
-                        self.acc.x = 0.5
+		#add gravity
+        self.vel_y += 1
+        if self.vel_y > 10:
+            self.vel_y = 10
+        dy += self.vel_y
 
-        self.acc.x += self.vel.x * self.fric
-        self.vel += self.acc
-        self.pos += self.vel + 0.5 * self.acc
+		#check for collision
 
-        self.rect.midbottom = self.pos
+		#update player coordinates
+        self.rect.x += dx
+        self.rect.y += dy
 
-        # Keep player on the screen
-        if self.rect.left < 0:
-            self.rect.left = 0
-        elif self.rect.right > WIDTH:
-            self.rect.right = WIDTH
-        if self.rect.top <= 0:
-            self.rect.top = 0
-        elif self.rect.bottom >= HEIGHT:
+        if self.rect.bottom > HEIGHT:
             self.rect.bottom = HEIGHT
+            dy = 0
+
+		#draw player onto screen
+        SCREEN.blit(self.image, self.rect)
 
     def kill(self):
         self.lives -= 1
         if self.lives <= 0:
-            self.surf.set_alpha(0)
+            self.image.set_alpha(0)
